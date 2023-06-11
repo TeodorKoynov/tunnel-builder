@@ -1,95 +1,111 @@
-import Image from 'next/image'
+"use client"
+
 import styles from './page.module.css'
+import BlockList from "@/components/blocks/block-list/BlockList";
+import TunnelBuilder from "@/components/tunnel-builder/TunnelBuilder";
+import BlockSettings from "@/components/block-settings/BlockSettings";
+
+const BLOCKS_TO_DRAG = [
+    {id: "edit", text: "Edit block"},
+    {id: "title", text: "Title block"},
+    {id: "home", text: "Home block"},
+]
+
+const BLOCKS_IN_USE = [
+    {id: "test 1", text: "test 1"},
+    {id: "test 2", text: "test 2"},
+    {id: "test 3", text: "test 3"},
+]
+
+export enum droppableIds {
+    workPlaceId = 'workPlace',
+    blocksList = 'blockList'
+}
+
+export interface BuildingBlock {
+    id: string,
+    text: string,
+    // simplified?: boolean,
+    // index: number,
+}
+
+import {DragDropContext} from 'react-beautiful-dnd';
+import {useEffect, useState} from "react";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    const [workPlaceBlocks, setWorkPlaceBlocks] = useState(BLOCKS_IN_USE);
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    useEffect(() => {
+        setWorkPlaceBlocks(BLOCKS_IN_USE);
+    }, [])
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+    const onDragEnd = (result: any) => {
+        const {destination, source, draggableId} = result;
+
+        if (!destination) {
+            return;
+        }
+
+        if (destination.droppableId === source.droppableId &&
+            destination.index === source.index
+        ) {
+            return;
+        }
+
+        if (destination.droppableId === droppableIds.workPlaceId && source.droppableId === droppableIds.blocksList) {
+
+            console.log(result)
+
+            const blockToAdd = BLOCKS_TO_DRAG.find((block) => block.id === draggableId);
+            console.log("Block to be added", blockToAdd);
+
+            const newWorkingPlaces = [...workPlaceBlocks]
+
+            if (blockToAdd) {
+                newWorkingPlaces.splice(destination.index, 0, {id: Math.random().toString(), text: blockToAdd.text});
+                setWorkPlaceBlocks(newWorkingPlaces);
+                return;
+            }
+
+            return;
+        }
+
+        console.log(result)
+
+        if (destination.droppableId === droppableIds.workPlaceId && source.droppableId === droppableIds.workPlaceId) {
+            const newBlocks = workPlaceBlocks;
+            const movedBlock = workPlaceBlocks.splice(source.index, 1);
+            workPlaceBlocks.splice(destination.index, 0, ...movedBlock);
+
+            console.log(workPlaceBlocks);
+            console.log(newBlocks);
+
+            setWorkPlaceBlocks(newBlocks);
+            return;
+        }
+
+        return;
+    }
+
+    return (
+        <DragDropContext
+            // onDragStart={}
+            // onDragUpdate={}
+            onDragEnd={onDragEnd}
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            <div className={"container"}>
+                <div className={styles.layout}>
+                    <div className={styles.blocks}>
+                        <BlockList blocks={BLOCKS_TO_DRAG}/>
+                    </div>
+                    <div className={styles.tunnelBuilder}>
+                        <TunnelBuilder blocks={workPlaceBlocks}/>
+                    </div>
+                    <div className={styles.blockSettings}>
+                        <BlockSettings/>
+                    </div>
+                </div>
+            </div>
+        </DragDropContext>
+    )
 }

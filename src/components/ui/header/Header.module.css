@@ -1,0 +1,33 @@
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-background);
+    color: var(--color-text)
+}
+
+.nav {
+
+}
+
+.navList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.navItem {
+    font-size: 1.0125rem;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    opacity: 0.6;
+    font-weight: var(--fw-medium);
+}
+
+.active {
+    opacity: 1;
+    color: var(--color-text)
+}

@@ -1,0 +1,15 @@
+.block {
+    /*position: relative;*/
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.blockSimplified {
+    width: calc(100% - 1rem);
+    height: 9rem;
+    background-color: var(--color-primary);
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
