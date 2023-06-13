@@ -1,0 +1,16 @@
+.container {
+    background-color: var(--color-secondary);
+}
+
+.info {
+    padding: 1rem 0;
+}
+
+.heading {
+    font-size: 1.125rem;
+    font-weight: var(--fw-medium);
+}
+
+.settings {
+    padding: 1rem 0;
+}

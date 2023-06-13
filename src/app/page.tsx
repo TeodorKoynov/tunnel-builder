@@ -1,43 +1,74 @@
 "use client"
 
-import styles from './page.module.css'
+import {DragDropContext} from 'react-beautiful-dnd';
+import {useEffect, useState} from "react";
 import BlockList from "@/components/blocks/block-list/BlockList";
 import TunnelBuilder from "@/components/tunnel-builder/TunnelBuilder";
 import BlockSettings from "@/components/block-settings/BlockSettings";
 
-const BLOCKS_TO_DRAG = [
-    {id: "edit", text: "Edit block"},
-    {id: "title", text: "Title block"},
-    {id: "home", text: "Home block"},
-]
+import {BlockDescriptionSettings, BlockHeadingSettings, blockTypes} from "@/components/blocks/block-types/blockTypes";
 
-const BLOCKS_IN_USE = [
-    {id: "test 1", text: "test 1"},
-    {id: "test 2", text: "test 2"},
-    {id: "test 3", text: "test 3"},
-]
+
+import styles from './page.module.css'
+
 
 export enum droppableIds {
     workPlaceId = 'workPlace',
     blocksList = 'blockList'
 }
 
+const BLOCKS_TO_DRAG: BuildingBlock[] = [
+    {id: "edit", name: "Heading", type: blockTypes.heading, settings: {text: 'This is not', heading: 'A test'}},
+    {id: "title", name: "Description", type: blockTypes.description, settings: {description: 'This is a description'}},
+    {id: "home", name: "Home block", type: blockTypes.heading, settings: {}},
+]
+
+const BLOCKS_IN_USE: BuildingBlock[] = [
+    {id: "test 1", name: "test 1", type: blockTypes.heading, settings: {text: 'This is not', heading: 'A test'}},
+    {id: "test 2", name: "test 2", type: blockTypes.description, settings: {description: 'This is a description'}},
+    {id: "test 3", name: "test 3", type: blockTypes.heading, settings: {text: 'Eazy', heading: 'I tell you'}},
+]
+
 export interface BuildingBlock {
     id: string,
-    text: string,
-    // simplified?: boolean,
-    // index: number,
+    name: string,
+    type: blockTypes,
+    settings: BlockHeadingSettings | BlockDescriptionSettings | object,
 }
 
-import {DragDropContext} from 'react-beautiful-dnd';
-import {useEffect, useState} from "react";
-
 export default function Home() {
-    const [workPlaceBlocks, setWorkPlaceBlocks] = useState(BLOCKS_IN_USE);
+    const [workPlaceBlocks, setWorkPlaceBlocks] = useState<BuildingBlock[]>(BLOCKS_IN_USE);
+    const [selectedBlock, setSelectedBlock] = useState<BuildingBlock>();
 
     useEffect(() => {
         setWorkPlaceBlocks(BLOCKS_IN_USE);
     }, [])
+
+    const onBlockSelectHandler = (blockId: string) => {
+        const newSelectedBlock = workPlaceBlocks.find(block => block.id === blockId);
+
+        if (newSelectedBlock) {
+            // console.log("newSelectedBlock", newSelectedBlock)
+            setSelectedBlock(newSelectedBlock);
+        }
+    }
+
+    const onSettingsChangedHandler = (newSettings: any) => {
+        // @ts-ignore
+        const updatedSelectedBlock = {...selectedBlock, settings: newSettings}
+        // @ts-ignore
+        setSelectedBlock(updatedSelectedBlock)
+        const updatedWorkPlaceBlocks = workPlaceBlocks.map((workPlaceBlock) => {
+            if (workPlaceBlock.id === updatedSelectedBlock.id) {
+                return updatedSelectedBlock;
+            }
+
+            return workPlaceBlock;
+        })
+        // @ts-ignore
+        setWorkPlaceBlocks([...updatedWorkPlaceBlocks]);
+        return;
+    }
 
     const onDragEnd = (result: any) => {
         const {destination, source, draggableId} = result;
@@ -62,7 +93,7 @@ export default function Home() {
             const newWorkingPlaces = [...workPlaceBlocks]
 
             if (blockToAdd) {
-                newWorkingPlaces.splice(destination.index, 0, {id: Math.random().toString(), text: blockToAdd.text});
+                newWorkingPlaces.splice(destination.index, 0, {...blockToAdd, id: Math.random().toString()});
                 setWorkPlaceBlocks(newWorkingPlaces);
                 return;
             }
@@ -99,10 +130,11 @@ export default function Home() {
                         <BlockList blocks={BLOCKS_TO_DRAG}/>
                     </div>
                     <div className={styles.tunnelBuilder}>
-                        <TunnelBuilder blocks={workPlaceBlocks}/>
+                        <TunnelBuilder onBlockSelectHandler={onBlockSelectHandler} blocks={workPlaceBlocks}/>
                     </div>
                     <div className={styles.blockSettings}>
-                        <BlockSettings/>
+                        {selectedBlock &&
+                            <BlockSettings onSettingsChange={onSettingsChangedHandler} selectedBlock={selectedBlock}/>}
                     </div>
                 </div>
             </div>

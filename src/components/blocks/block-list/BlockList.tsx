@@ -1,4 +1,4 @@
-import Block from "@/components/blocks/block/Block";
+import Block from "@/components/blocks/block-types/block/Block";
 
 import styles from "./Blocks.module.css";
 import {Droppable} from "react-beautiful-dnd";
