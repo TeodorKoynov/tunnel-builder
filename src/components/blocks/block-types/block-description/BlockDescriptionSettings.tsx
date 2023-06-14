@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react";
 
+import styles from "./BlockDescriptionSettings.module.css";
+
 export default function BlockDescriptionSettings({
                                                      description: initialDescription,
                                                      onSave
@@ -22,10 +24,12 @@ export default function BlockDescriptionSettings({
     }
 
 
-    return <form onSubmit={e => submitHandler(e)} action="">
-        <label htmlFor="description">Description</label>
-        <input id={"description"} type="text" value={description}
-               onChange={(e) => setDescription(e.target.value)}/>
+    return <form className={styles.form} onSubmit={e => submitHandler(e)} action="">
+        <div className={styles.control}>
+            <label htmlFor="description">Description</label>
+            <textarea id={"description"} value={description}
+                   onChange={(e) => setDescription(e.target.value)}/>
+        </div>
         <button type={"submit"}>Save</button>
     </form>
 }

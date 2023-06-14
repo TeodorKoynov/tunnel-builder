@@ -2,6 +2,8 @@
 
 import {useEffect, useState} from "react";
 
+import styles from "./BlockImageSettings.module.css";
+
 export default function BlockImageSettings({
                                                imgUrl: initialImgUrl,
                                                text: initialText,
@@ -47,26 +49,37 @@ export default function BlockImageSettings({
     }
 
     return (
-        <form onSubmit={(e) => submitHandler(e)} action="">
-            <label htmlFor="text">Img Url</label>
-            <input id={"imgUrl"} type="text" value={imgUrl}
-                   onChange={(e) => setImgUrl(e.target.value)}/>
+        <form className={styles.form} onSubmit={(e) => submitHandler(e)} action="">
+            <div className={styles.control}>
+                <label htmlFor="text">Img Url</label>
+                <input id={"imgUrl"} type="text" value={imgUrl}
+                       onChange={(e) => setImgUrl(e.target.value)}/>
+            </div>
 
-            <label htmlFor="text">Text</label>
-            <input id={"text"} type="text" value={text}
-                   onChange={(e) => setText(e.target.value)}/>
+            <div className={styles.control}>
+                <label htmlFor="text">Text</label>
+                <input id={"text"} type="text" value={text}
+                       onChange={(e) => setText(e.target.value)}/>
+            </div>
 
-            <label htmlFor="alt">alt</label>
-            <input id={"alt"} type="text" value={alt}
-                   onChange={(e) => setAlt(e.target.value)}/>
+            <div className={styles.control}>
+                <label htmlFor="alt">alt</label>
+                <input id={"alt"} type="text" value={alt}
+                       onChange={(e) => setAlt(e.target.value)}/>
+            </div>
 
-            <label htmlFor="height">Height</label>
-            <input id={"height"} type="number" value={height}
-                   onChange={(e) => setHeight(+e.target.value)}/>
+            <div className={styles.control}>
+                <label htmlFor="height">Height</label>
+                <input id={"height"} type="number" value={height}
+                       onChange={(e) => setHeight(+e.target.value)}/>
 
-            <label htmlFor="width">Width</label>
-            <input id={"width"} type="number" value={width}
-                   onChange={(e) => setWidth(+e.target.value)}/>
+            </div>
+
+            <div className={styles.control}>
+                <label htmlFor="width">Width</label>
+                <input id={"width"} type="number" value={width}
+                       onChange={(e) => setWidth(+e.target.value)}/>
+            </div>
 
             <button type={"submit"}>Save</button>
         </form>

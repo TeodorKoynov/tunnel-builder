@@ -2,6 +2,8 @@
 
 import {useEffect, useState} from "react";
 
+import styles from "./BlockHeadingSettings.module.css";
+
 export default function BlockHeadingSettings({
                                                  heading: initialHeading,
                                                  text: initialText,
@@ -30,12 +32,18 @@ export default function BlockHeadingSettings({
     }
 
     return (
-        <form onSubmit={(e) => submitHandler(e)} action="">
-            <label htmlFor="heading">Heading</label>
-            <input id={"heading"} type="text" value={heading}
-                   onChange={(e) => setHeading(e.target.value)}/>
-            <label htmlFor="text">Text</label>
-            <input id={"text"} type="text" value={text} onChange={(e) => setText(e.target.value)}/>
+        <form className={styles.form} onSubmit={(e) => submitHandler(e)} action="">
+            <div className={styles.control}>
+                <label htmlFor="heading">Heading</label>
+                <input id={"heading"} type="text" value={heading}
+                       onChange={(e) => setHeading(e.target.value)}/>
+            </div>
+
+            <div className={styles.control}>
+                <label htmlFor="text">Text</label>
+                <input id={"text"} type="text" value={text} onChange={(e) => setText(e.target.value)}/>
+            </div>
+
             <button type={"submit"}>Save</button>
         </form>
     )

@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58a826b8-44d1-4c27-8e14-e78b6bea3853" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-description/BlockDescription.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-description/BlockDescriptionSettings.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-heading/BlockHeading.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-heading/BlockHeadingSettings.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImageSettings.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImageSettings.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/block-settings/BlockSettings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/block-settings/BlockSettings.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/block/Block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block/Block.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/blockTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/blockTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tunnel-builder/TunnelBuilder.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tunnel-builder/TunnelBuilder.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/block-description/BlockDescriptionSettings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-description/BlockDescriptionSettings.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/block-description/BlockDescriptionSettings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-description/BlockDescriptionSettings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/block-heading/BlockHeadingSettings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-heading/BlockHeadingSettings.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/block-heading/BlockHeadingSettings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-heading/BlockHeadingSettings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImageSettings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImageSettings.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImageSettings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImageSettings.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +90,7 @@
       <workItem from="1686330146875" duration="2976000" />
       <workItem from="1686383111511" duration="8364000" />
       <workItem from="1686476926854" duration="31240000" />
-      <workItem from="1686735083669" duration="3578000" />
+      <workItem from="1686735083669" duration="5012000" />
     </task>
     <servers />
   </component>
