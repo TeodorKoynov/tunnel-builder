@@ -7,6 +7,9 @@
 }
 
 .blockSimplified {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: calc(100% - 1rem);
     height: 9rem;
     background-color: var(--color-primary);

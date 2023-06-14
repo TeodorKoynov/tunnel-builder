@@ -22,7 +22,7 @@ export default function Block({block, index, simplified = false, onBlockSelect}:
                      {...provided.dragHandleProps}
                      ref={provided.innerRef}
                 >
-                    <p>{block.name}</p>
+                    {renderBlockByType(block, simplified)}
                 </div>
             )}
         </Draggable>
@@ -48,13 +48,13 @@ export default function Block({block, index, simplified = false, onBlockSelect}:
     )
 }
 
-function renderBlockByType(block: BuildingBlock) {
+function renderBlockByType(block: BuildingBlock, simplified: boolean = false) {
     switch (block.type) {
         case blockTypes.heading:
-            return <BlockHeading {...block.settings}/>
+            return <BlockHeading {...block.settings} simplified={simplified}/>
         case blockTypes.description:
-            return <BlockDescription {...block.settings}/>
+            return <BlockDescription {...block.settings} simplified={simplified}/>
         case blockTypes.image:
-            return <BlockImage {...block.settings}/>
+            return <BlockImage {...block.settings} simplified={simplified}/>
     }
 }

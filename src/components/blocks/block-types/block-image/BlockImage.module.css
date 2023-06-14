@@ -9,3 +9,42 @@
     flex-grow: 0;
     flex-shrink: 0;
 }
+
+.simplifiedContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.blockName {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    font-weight: var(--fw-medium);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.imgSimplified {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.simplifiedText {
+    font-size: 0.9125rem;
+    opacity: 0.9;
+}
+
+.dashedBorder {
+    border: 0.1rem dashed var(--color-secondary);
+    padding: 0.25rem 0.25rem;
+    opacity: 0.8;
+}
