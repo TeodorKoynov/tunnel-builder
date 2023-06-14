@@ -2,7 +2,8 @@ import {BuildingBlock} from "@/app/page";
 
 export enum blockTypes {
     heading = 'BlockHeading',
-    description = 'BlockDescription'
+    description = 'BlockDescription',
+    image = 'BlockImage',
 }
 
 // export const getBlockTypeSettings = (block: BuildingBlock) => {

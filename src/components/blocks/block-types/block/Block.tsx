@@ -4,8 +4,9 @@ import styles from "./Block.module.css";
 import {Draggable} from "react-beautiful-dnd";
 import {BuildingBlock} from "@/app/page";
 import BlockHeading from "@/components/blocks/block-types/block-heading/BlockHeading";
-import { blockTypes} from "@/components/blocks/block-types/blockTypes";
+import {blockTypes} from "@/components/blocks/block-types/blockTypes";
 import BlockDescription from "@/components/blocks/block-types/block-description/BlockDescription";
+import BlockImage from "@/components/blocks/block-types/block-image/BlockImage";
 
 export default function Block({block, index, simplified = false, onBlockSelect}: {
     block: BuildingBlock,
@@ -53,5 +54,7 @@ function renderBlockByType(block: BuildingBlock) {
             return <BlockHeading {...block.settings}/>
         case blockTypes.description:
             return <BlockDescription {...block.settings}/>
+        case blockTypes.image:
+            return <BlockImage {...block.settings}/>
     }
 }

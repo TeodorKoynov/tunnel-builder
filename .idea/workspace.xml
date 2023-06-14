@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58a826b8-44d1-4c27-8e14-e78b6bea3853" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-description/BlockDescription.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-description/BlockDescriptionSettings.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-heading/BlockHeading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-heading/BlockHeadingSettings.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/blockTypes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-description/BlockDescription.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-description/BlockDescriptionSettings.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-heading/BlockHeading.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-heading/BlockHeadingSettings.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImage.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImageSettings.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block-image/BlockImageSettings.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/block-settings/BlockSettings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/block-settings/BlockSettings.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/block-settings/BlockSettings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/block-settings/BlockSettings.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-list/BlockList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-list/BlockList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/block/Block.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block/Block.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/block/Block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block/Block.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tunnel-builder/TunnelBuilder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tunnel-builder/TunnelBuilder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/block/Block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block/Block.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/blockTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/blockTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tunnel-builder/TunnelBuilder.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tunnel-builder/TunnelBuilder.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +31,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -45,22 +48,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/dev/sales-tunnel-builder",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\dev\\sales-tunnel-builder\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/dev/sales-tunnel-builder&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\dev\\sales-tunnel-builder\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\dev\sales-tunnel-builder\src\components\blocks\block-types" />
@@ -95,7 +98,8 @@
       <workItem from="1686311707265" duration="6410000" />
       <workItem from="1686330146875" duration="2976000" />
       <workItem from="1686383111511" duration="8364000" />
-      <workItem from="1686476926854" duration="29271000" />
+      <workItem from="1686476926854" duration="31240000" />
+      <workItem from="1686735083669" duration="3578000" />
     </task>
     <servers />
   </component>

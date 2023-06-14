@@ -1,22 +1,28 @@
 .layout {
     margin-top: 2rem;
-    display: grid;
-    grid-template-areas:
-            "blocks tunnel-builder tunnel-builder tunnel-builder block-settings";
-    grid-gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    /*display: grid;*/
+    /*grid-template-areas:*/
+    /*        "blocks tunnel-builder tunnel-builder tunnel-builder block-settings";*/
+    /*grid-gap: 1rem;*/
 }
 
 .blocks {
     grid-area: blocks;
     text-align: center;
+    width: 15%;
 }
 
 .tunnelBuilder {
     grid-area: tunnel-builder;
     text-align: center;
+    width: 70%;
 }
 
 .blockSettings {
     grid-area: block-settings;
     text-align: center;
+    width: 15%;
 }
