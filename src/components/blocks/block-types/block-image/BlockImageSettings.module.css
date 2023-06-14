@@ -21,9 +21,14 @@
 }
 
 .form button {
+    cursor: pointer;
     background-color: var(--color-primary);
     border-radius: 0.5rem;
     padding: 0.5rem 0.25rem;
     font-weight: var(--fw-medium);
     margin-top: 0.5rem;
+}
+
+.form button:hover {
+    opacity: 0.8;
 }
