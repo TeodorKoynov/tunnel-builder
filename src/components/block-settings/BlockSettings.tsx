@@ -23,7 +23,7 @@ export default function BlockSettings({selectedBlock: initialBlock, onSettingsCh
         setSelectedBlock({...initialBlock, settings: {...initialBlock.settings}})
     }, [initialBlock, setSelectedBlock])
 
-    return (<div className={styles.container}>
+    return (<div className={styles.blockSettings}>
         <div className={styles.info}>
             <p className={styles.heading}>Settings</p>
             <p>drag and drop</p>

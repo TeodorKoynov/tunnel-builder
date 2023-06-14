@@ -1,8 +1,9 @@
+import {Droppable} from "react-beautiful-dnd";
+import {droppableIds, BuildingBlock} from "@/app/page";
 import Block from "@/components/blocks/block-types/block/Block";
 
 import styles from "./Blocks.module.css";
-import {Droppable} from "react-beautiful-dnd";
-import {droppableIds, BuildingBlock} from "@/app/page";
+
 
 export default function BlockList({blocks}: { blocks: BuildingBlock[] }) {
     return (

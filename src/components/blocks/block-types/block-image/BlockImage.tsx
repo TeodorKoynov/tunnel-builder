@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import styles from "./BlockImage.module.css";
+
 interface BlockImageProps {
     imgUrl: string,
     text?: string,
@@ -10,7 +12,7 @@ interface BlockImageProps {
 
 export default function BlockImage({imgUrl, text, alt, height, width}: BlockImageProps) {
     return (
-        <div>
+        <div className={styles.container}>
             <Image src={imgUrl} alt={alt} height={height} width={width}/>
             <p>{text}</p>
         </div>
