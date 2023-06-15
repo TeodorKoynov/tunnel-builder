@@ -13,7 +13,7 @@ export default function BlockList({blocks}: { blocks: BuildingBlock[] }) {
                 <p className={styles.heading}>Blocks</p>
                 <p>drag and drop</p>
             </div>
-            <Droppable droppableId={droppableIds.blocksList}>
+            <Droppable isDropDisabled={true} droppableId={droppableIds.blocksList}>
                 {(provided, snapshot) => (
                     <div className={styles.blockList}
                          ref={provided.innerRef}

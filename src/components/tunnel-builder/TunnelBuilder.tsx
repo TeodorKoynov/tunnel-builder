@@ -34,7 +34,7 @@ export default function TunnelBuilder({blocks, selectedBlock, onBlockSelectHandl
                                    onBlockDelete={onBlockDelete}
                             />
                         )}
-                        {/*{provided.placeholder}*/}
+                        {provided.placeholder}
                     </div>
                 }
             </Droppable>

@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="58a826b8-44d1-4c27-8e14-e78b6bea3853" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/block-settings/BlockSettings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/block-settings/BlockSettings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/block-list/BlockList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-list/BlockList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/block/Block.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block/Block.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/blocks/block-types/block/Block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/block-types/block/Block.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/tunnel-builder/TunnelBuilder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tunnel-builder/TunnelBuilder.tsx" afterDir="false" />
@@ -91,7 +90,7 @@
       <workItem from="1686476926854" duration="31240000" />
       <workItem from="1686735083669" duration="7355000" />
       <workItem from="1686752436181" duration="4663000" />
-      <workItem from="1686816362056" duration="3753000" />
+      <workItem from="1686816362056" duration="7695000" />
     </task>
     <servers />
   </component>
