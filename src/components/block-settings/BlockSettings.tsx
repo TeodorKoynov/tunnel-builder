@@ -23,6 +23,12 @@ export default function BlockSettings({selectedBlock: initialBlock, onSettingsCh
         setSelectedBlock({...initialBlock, settings: {...initialBlock.settings}})
     }, [initialBlock, setSelectedBlock])
 
+    console.log('selectedBlock', selectedBlock)
+
+    if (selectedBlock === null) {
+        return <p>No items</p>
+    }
+
     return (<div className={styles.blockSettings}>
         <div className={styles.info}>
             <p className={styles.heading}>Settings</p>
@@ -48,43 +54,3 @@ export default function BlockSettings({selectedBlock: initialBlock, onSettingsCh
         </div>
     </div>)
 }
-
-// const getRenderBlockSettings = (block: BuildingBlock) => {
-//     // let blockSettings;
-//     let renderSettingsForm;
-//
-//     switch (block.type) {
-//         case blockTypes.heading:
-//             // blockSettings = (selectedBlock.settings as BlockHeadingSettings)
-//             return renderSettingsForm = renderHeadingSettingsForm;
-//         // return {blockSettings, renderSettingsForm}
-//         case blockTypes.description:
-//             // blockSettings = (selectedBlock.settings as BlockDescriptionSettings)
-//             return renderSettingsForm = renderDescriptionSettingsForm;
-//         // return {blockSettings, renderSettingsForm}
-//     }
-// }
-//
-//
-// const renderHeadingSettingsForm = (headingSettings: BlockHeadingSettings, changeHandle: (e: FormEvent, inputName: string) => void) => {
-//     // console.log("headingSettings", headingSettings)
-//
-//     return <form action="">
-//         <label htmlFor="heading">Heading</label>
-//         <input id={"heading"} type="text" defaultValue={headingSettings.heading}
-//                onChange={(e) => changeHandle(e, 'heading')}/>
-//         <label htmlFor="text">Text</label>
-//         <input id={"text"} type="text" defaultValue={headingSettings.text} onChange={(e) => changeHandle(e, 'text')}/>
-//     </form>
-// }
-//
-// const renderDescriptionSettingsForm = (descriptionSettings: BlockDescriptionSettings, changeHandle: (e: FormEvent, inputName: string) => void) => {
-//     // console.log("descriptionSettings", descriptionSettings)
-//
-//     return <form action="">
-//         <label htmlFor="description">Description</label>
-//         <input id={"description"} type="text" defaultValue={descriptionSettings.description}
-//                onChange={(e) => changeHandle(e, 'description')}/>
-//     </form>
-// }
-

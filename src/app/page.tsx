@@ -59,11 +59,13 @@ export interface BuildingBlock {
 
 export default function Home() {
     const [workPlaceBlocks, setWorkPlaceBlocks] = useState<BuildingBlock[]>(BLOCKS_IN_USE);
-    const [selectedBlock, setSelectedBlock] = useState<BuildingBlock>();
+    const [selectedBlock, setSelectedBlock] = useState<BuildingBlock | null>(null);
 
     useEffect(() => {
         setWorkPlaceBlocks(BLOCKS_IN_USE);
     }, [])
+
+    console.log("selectedBlock", selectedBlock)
 
     const onBlockSelectHandler = (blockId: string) => {
         const newSelectedBlock = workPlaceBlocks.find(block => block.id === blockId);
@@ -90,6 +92,18 @@ export default function Home() {
         setWorkPlaceBlocks([...updatedWorkPlaceBlocks]);
         return;
     }
+
+    const onBlockDeleteHandler = (blockId: string) => {
+        console.log("Deleting")
+        const updatedWorkPlaceBlocks = workPlaceBlocks.filter((workPlaceBlock) => workPlaceBlock.id !== blockId)
+        setWorkPlaceBlocks([...updatedWorkPlaceBlocks]);
+    }
+
+    useEffect(() => {
+        if (!workPlaceBlocks.find(workPlaceBlock => workPlaceBlock.id === selectedBlock?.id)) {
+            setSelectedBlock(null);
+        }
+    }, [selectedBlock?.id, workPlaceBlocks])
 
     const onDragEnd = (result: any) => {
         const {destination, source, draggableId} = result;
@@ -151,10 +165,11 @@ export default function Home() {
                         <BlockList blocks={BLOCKS_TO_DRAG}/>
                     </div>
                     <div className={styles.tunnelBuilder}>
-                        <TunnelBuilder onBlockSelectHandler={onBlockSelectHandler} blocks={workPlaceBlocks}/>
+                        <TunnelBuilder selectedBlock={selectedBlock} onBlockSelectHandler={onBlockSelectHandler}
+                                       onBlockDelete={onBlockDeleteHandler} blocks={workPlaceBlocks}/>
                     </div>
                     <div className={styles.blockSettings}>
-                        {selectedBlock &&
+                        {selectedBlock !== null &&
                             <BlockSettings onSettingsChange={onSettingsChangedHandler} selectedBlock={selectedBlock}/>}
                     </div>
                 </div>

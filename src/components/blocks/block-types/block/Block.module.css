@@ -1,10 +1,16 @@
 .block {
-    /*position: relative;*/
+    position: relative;
     padding: 1rem;
     width: 100%;
     background-color: var(--color-primary);
     margin-bottom: 1rem;
+    border: 0.1rem solid var(--color-primary);
 }
+
+.selectedBlock {
+    border: 0.1rem dashed var(--color-secondary);
+    /*opacity: 0.8;*/
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 
 .blockSimplified {
     display: flex;
@@ -15,4 +21,25 @@
     background-color: var(--color-primary);
     cursor: pointer;
     border-radius: 0.5rem;
+}
+
+.removeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-secondary);
+    font-weight: var(--fw-semi-bold);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.removeBtn:hover {
+    opacity: 0.8;
 }

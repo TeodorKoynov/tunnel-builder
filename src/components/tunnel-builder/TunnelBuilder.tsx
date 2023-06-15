@@ -6,9 +6,11 @@ import {Droppable} from "react-beautiful-dnd";
 
 import styles from "./TunnelBuilder.module.css";
 
-export default function TunnelBuilder({blocks, onBlockSelectHandler}: {
+export default function TunnelBuilder({blocks, selectedBlock, onBlockSelectHandler, onBlockDelete}: {
     blocks: BuildingBlock[],
-    onBlockSelectHandler?: (blockId: string) => void
+    selectedBlock?: BuildingBlock,
+    onBlockSelectHandler?: (blockId: string) => void,
+    onBlockDelete?: (blockId: string) => void,
 }) {
     return (
         <div className={styles.builder}>
@@ -27,7 +29,9 @@ export default function TunnelBuilder({blocks, onBlockSelectHandler}: {
                             <Block key={block.id}
                                    block={block}
                                    index={index}
+                                   selectedBlock={selectedBlock}
                                    onBlockSelect={onBlockSelectHandler}
+                                   onBlockDelete={onBlockDelete}
                             />
                         )}
                         {/*{provided.placeholder}*/}
